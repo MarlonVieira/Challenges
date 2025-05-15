@@ -29,8 +29,6 @@ public class MainChallenges {
     }
 
     public void ExecChallengesTwo() {
-
-
         System.out.printf("Enter the first number to multiplicate: ");
         Integer numberA = scan.nextInt();
 
@@ -44,5 +42,16 @@ public class MainChallenges {
         Integer numberPrime = scan.nextInt();
 
         System.out.println(functions.primeNumber(numberPrime));
+
+        System.out.printf("Enter the first number to divide: ");
+        Integer numberC = scan.nextInt();
+
+        System.out.printf("Enter the second number to divide: ");
+        try {
+            Integer numberD = scan.nextInt();
+            System.out.println(functions.divide(numberC, numberD));
+        } catch (ArithmeticException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

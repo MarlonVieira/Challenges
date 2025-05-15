@@ -15,4 +15,13 @@ public class Functions implements iFunctions {
             return "Isn't prime!";
         }
     }
+
+    @Override
+    public Integer divide(Integer a, Integer b) {
+        if ((b == 0) || (a == 0)) {
+            throw new ArithmeticException("Error: Division by zero!");
+        } else {
+            return a / b;
+        }
+    }
 }
