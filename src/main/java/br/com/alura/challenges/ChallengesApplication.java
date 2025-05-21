@@ -21,6 +21,7 @@ public class  ChallengesApplication implements CommandLineRunner  {
 	public void run(String... args) throws Exception {
 		MainChallenges mainChallenges = new MainChallenges();
 		//mainChallenges.ExecChallengesOne();
-		mainChallenges.ExecChallengesTwo();
+		//mainChallenges.ExecChallengesTwo();
+		mainChallenges.ExecChallengesThree();
 	}
 }

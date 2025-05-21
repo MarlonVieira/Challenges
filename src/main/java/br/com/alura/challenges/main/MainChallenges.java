@@ -6,7 +6,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Scanner;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class MainChallenges {
     private Scanner scan = new Scanner(System.in);
@@ -53,5 +54,39 @@ public class MainChallenges {
         } catch (ArithmeticException e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    public void ExecChallengesThree() {
+        List<Integer> numbers = Arrays.asList(10, 20, 30, 40, 50);
+
+        Optional<Integer> max = numbers.stream()
+                .max(Integer::compare);
+
+        max.ifPresent(System.out::println);
+
+
+        List<String> words = Arrays.asList("java", "stream", "lambda", "code");
+
+        Map<Integer, List<String>> group = words.stream()
+                .collect(Collectors.groupingBy(String::length));
+
+        System.out.println(group);
+
+        List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+
+        String concatenate = names.stream()
+                .collect(Collectors.joining(", "));
+
+        System.out.println(concatenate);
+
+        List<Integer> numbers2 = Arrays.asList(1, 2, 3, 4, 5, 6);
+
+        int sumSquare = numbers2.stream()
+                .filter(n -> n % 2 == 0)
+                .map(n -> n * n)
+                .reduce(0, Integer::sum);
+        System.out.println(sumSquare);
+
+        List<Integer> numbers3 = Arrays.asList(1, 2, 3, 4, 5, 6);
     }
 }
