@@ -88,5 +88,11 @@ public class MainChallenges {
         System.out.println(sumSquare);
 
         List<Integer> numbers3 = Arrays.asList(1, 2, 3, 4, 5, 6);
+
+        Map<Boolean, List<Integer>> partitioning = numbers3.stream()
+                .collect(Collectors.partitioningBy(n -> n % 2 == 0));
+
+        System.out.println("Even: " + partitioning.get(true));
+        System.out.println("Odd: " + partitioning.get(false));
     }
 }
